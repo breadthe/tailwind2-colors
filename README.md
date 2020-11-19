@@ -1,10 +1,8 @@
-# Svelte + TailwindCSS 2.0 + RollupJS starter
+# TailwindCSS 2.0 color palette
 
-Starter template for [Svelte](https://svelte.dev) + [TailwindCSS](https://tailwindcss.com) apps.
+Full-screen TailwindCSS 2.0 palette color wall.
 
-It has built-in support for TailwindCSS 2.0, while the bundling is handled by Rollup.
-
-**Note** At the time of this posting (November 18, 2020), some of the required tools for PostCSS 8.0 haven't been updated yet. In the interim, this template uses the [PostCSS 7.0 compatibility build](https://tailwindcss.com/docs/installation#post-css-7-compatibility-build).
+Generated from the [Svelte + TailwindCSS 2.0 starter template](https://github.com/breadthe/svelte-tailwind2-starter).
 
 ## Get started
 

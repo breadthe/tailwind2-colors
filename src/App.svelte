@@ -1,34 +1,33 @@
 <script>
-  export let name;
+  import { theme } from "../tailwind.config.js";
+
+  const { colors } = { ...theme };
+  const filteredColors = Object.keys(colors).filter(
+    color =>
+      color !== "transparent" &&
+      color !== "current" &&
+      color !== "black" &&
+      color !== "white"
+  );
+
+  const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 </script>
 
 <style>
-  main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
-  }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
 </style>
 
 <main>
-  <h1 class="text-gray-500">Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
+  <div class="grid grid-cols-10 h-screen">
+    {#each filteredColors as color}
+      {#each shades as shade}
+        <div
+          class="flex items-center justify-center {`bg-${color}-${shade}`}
+          {shade > 400 ? `text-${color}-50` : `text-${color}-900`}"
+          style="font-size: 0.5rem;">
+          {`${color}-${shade}`}
+        </div>
+      {/each}
+    {/each}
+  </div>
 </main>
