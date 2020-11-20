@@ -53,7 +53,7 @@
   </div>
 
   <footer
-    class="bg-gradient-to-br flex from-indigo-700 justify-center p-8 space-x-8
+    class="bg-gradient-to-r flex from-indigo-700 justify-center p-8 space-x-8
     text-rose-100 to-rose-900">
 
     <div class="relative group">
@@ -64,7 +64,7 @@
         TailwindCSS
         <span
           class="absolute bg-rose-300 group-hover:bg-rose-500 left-0 opacity-50
-          pb-2 top-2/3 w-full" />
+          pb-2 top-4 sm:top-2/3 w-full" />
       </a>
       2.0 color palette
     </div>
@@ -95,7 +95,7 @@
         GitHub
         <span
           class="absolute bg-rose-300 group-hover:bg-rose-500 left-0 opacity-50
-          pb-2 top-2/3 w-full" />
+          pb-2 top-4 sm:top-2/3 w-full" />
       </a>
     </div>
 
@@ -120,7 +120,7 @@
         @brbcoding
         <span
           class="absolute bg-rose-300 group-hover:bg-rose-500 left-0 opacity-50
-          pb-2 top-2/3 w-full" />
+          pb-2 top-4 sm:top-2/3 w-full" />
       </a>
     </div>
   </footer>
