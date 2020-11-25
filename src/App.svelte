@@ -3,13 +3,9 @@
   import { theme } from "../tailwind.config.js";
 
   const { colors } = { ...theme };
-  const filteredColors = Object.keys(colors).filter(
-    color =>
-      color !== "transparent" &&
-      color !== "current" &&
-      color !== "black" &&
-      color !== "white"
-  );
+
+  // remove non-palette colors
+  ["transparent", "current", "black", "white"].forEach(c => delete colors[c]);
 
   const shades = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
@@ -38,16 +34,19 @@
 
 <main>
   <div class="grid grid-cols-10 h-screen">
-    {#each filteredColors as color}
+    {#each Object.keys(colors) as color}
       {#each shades as shade}
         <div
           id={`${color}-${shade}`}
-          class="flex items-center justify-center text-center {`bg-${color}-${shade}`}
+          class="flex flex-col items-center justify-center text-center {`bg-${color}-${shade}`}
           {shade > 400 ? `text-${color}-50` : `text-${color}-900`}"
           style="font-size: 0.5rem;"
           on:mouseover={() => zoom(`${color}-${shade}`, 'in')}
           on:mouseout={() => zoom(`${color}-${shade}`, 'out')}>
-          {color} {shade}
+          <span>{color} {shade}</span>
+          <span id={`hex-${color}-${shade}`} style="font-size: 0.3rem;">
+            {`${colors[color][shade]}`}
+          </span>
         </div>
       {/each}
     {/each}
