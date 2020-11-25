@@ -74,9 +74,7 @@
           on:mouseout={() => zoom(`${color}-${shade}`, 'out')}
           on:click={() => copyHex(`${color}-${shade}`)}>
           <span>{color} {shade}</span>
-          <span id={`hex-${color}-${shade}`} style="font-size: 0.3rem;">
-            {`${colors[color][shade]}`}
-          </span>
+          <span id={`hex-${color}-${shade}`}>{`${colors[color][shade]}`}</span>
         </div>
       {/each}
     {/each}
